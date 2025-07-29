@@ -1,0 +1,127 @@
+1. Program Table
+
+CREATE TABLE Program (
+Program_ID CHAR(10),
+Program_Name CHAR(40) NOT NULL,
+Credits NUMBER NOT NULL,
+Program_Duration CHAR(40) NOT NULL,
+CONSTRAINT Program_pk PRIMARY KEY (Program_ID));
+
+2. Student Table
+
+CREATE TABLE Student (
+Student_ID CHAR(10),
+Program_ID CHAR(10),
+Student_Address CHAR(40) NOT NULL,
+Student_Name CHAR(40) NOT NULL,
+Enrollment_Date DATE NOT NULL,
+CONSTRAINT Student_pk PRIMARY KEY (Student_ID),
+CONSTRAINT Student_Program_fk FOREIGN KEY (Program_ID) 
+REFERENCES Program (Program_ID));
+
+3. Teacher Table
+
+CREATE TABLE Teacher (
+Teacher_ID CHAR(10),
+Teacher_Name CHAR(40) NOT NULL,
+Teacher_Address CHAR(40) NOT NULL,
+Teacher_Email CHAR(50) UNIQUE,
+CONSTRAINT Teacher_pk PRIMARY KEY (Teacher_ID));
+
+4. Module Table
+
+CREATE TABLE Module (
+Mod_ID CHAR(10),
+Mod_Name CHAR(40) NOT NULL,
+Mod_Duration CHAR(20) NOT NULL,
+Teacher_ID CHAR(10) NOT NULL,
+CONSTRAINT Module_pk PRIMARY KEY (Mod_ID),
+CONSTRAINT Teacher_fk FOREIGN KEY (Teacher_ID)
+REFERENCES Teacher (Teacher_ID));
+
+5. Result Table
+
+CREATE TABLE Result (
+Result_ID CHAR(10),
+Total_Marks NUMBER NOT NULL,
+Grade CHAR(2) NOT NULL,
+Result_Date DATE NOT NULL,
+CONSTRAINT Result_pk PRIMARY KEY (Result_ID));
+
+6. Assessment Table
+
+CREATE TABLE Assessment (
+Assessment_ID CHAR(10),
+Assessment_Title CHAR(40) NOT NULL,
+Assessment_Weightage NUMBER NOT NULL,
+Assessment_Deadline DATE NOT NULL,
+CONSTRAINT Assessment_pk PRIMARY KEY (Assessment_ID));
+
+7. Resources Table
+
+CREATE TABLE Resources (
+Resource_ID CHAR(10),
+Resource_Title CHAR(40) NOT NULL,
+Resource_Duration CHAR(20) NOT NULL,
+CONSTRAINT Resource_pk PRIMARY KEY (Resource_ID));
+
+8. Announcement Table
+
+CREATE TABLE Announcement (
+Announcement_ID CHAR(10),
+Announcement_Title CHAR(40) NOT NULL,
+Announcement_Date DATE NOT NULL,
+CONSTRAINT Announcement_pk PRIMARY KEY (Announcement_ID));
+
+9. Module_Student Table
+
+CREATE TABLE Module_Student (
+Mod_ID CHAR(10),
+Student_ID CHAR(10),
+CONSTRAINT Module_Student_pk PRIMARY KEY (Mod_ID, Student_ID),
+CONSTRAINT Module_fk FOREIGN KEY (Mod_ID) 
+REFERENCES Module(Mod_ID),
+CONSTRAINT Module_Student_fk FOREIGN KEY (Student_ID) 
+REFERENCES Student(Student_ID));
+
+10. Module_Student_Result Table
+
+CREATE TABLE Module_Student_Result (
+Assessment_ID CHAR(10),
+Student_ID CHAR(10),
+Mod_ID CHAR(10),
+Result_ID CHAR(10),
+CONSTRAINT Assessment_Student_Module_pk PRIMARY KEY (Assessment_ID, Student_ID, Mod_ID),
+CONSTRAINT Assessment_Module_fk FOREIGN KEY (Assessment_ID) 
+REFERENCES Assessment (Assessment_ID),
+CONSTRAINT Assessment_Student_fk FOREIGN KEY (Student_ID) 
+REFERENCES Student (Student_ID),
+CONSTRAINT Module_Assessment_fk FOREIGN KEY (Mod_ID) 
+REFERENCES Module (Mod_ID),
+CONSTRAINT Assessment_Result_fk FOREIGN KEY (Result_ID)
+REFERENCES Result (Result_ID));
+11. Resource_Module_Student Table
+
+CREATE TABLE Resource_Module_Student (
+Resource_ID CHAR(10),
+Mod_ID CHAR(10),
+Student_ID CHAR(10),
+Resource_Completion CHAR(20) NOT NULL,
+CONSTRAINT Resources_Module_Student_pk PRIMARY KEY (Resource_ID, Mod_ID, Student_ID),
+CONSTRAINT Resources_Module_fk FOREIGN KEY (Resource_ID) 
+REFERENCES Resources (Resource_ID),
+CONSTRAINT Module_Resources_fk FOREIGN KEY (Mod_ID) 
+REFERENCES Module (Mod_ID),
+CONSTRAINT Resources_Student_fk FOREIGN KEY (Student_ID) 
+REFERENCES Student (Student_ID));
+
+12. Announcement_Module_Student Table
+
+CREATE TABLE Announcement_Module_Student (
+Announcement_ID CHAR(10),
+Mod_ID CHAR(10),
+Student_ID CHAR(10),
+CONSTRAINT Announcement_Module_Student_pk PRIMARY KEY (Announcement_ID, Mod_ID, Student_ID),
+CONSTRAINT Announcement_Module_fk FOREIGN KEY (Announcement_ID) REFERENCES Announcement (Announcement_ID),
+CONSTRAINT Module_Announcement_fk FOREIGN KEY (Mod_ID) REFERENCES Module (Mod_ID),
+CONSTRAINT Announcement_Student_fk FOREIGN KEY (Student_ID) REFERENCES Student (Student_ID));

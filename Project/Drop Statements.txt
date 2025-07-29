@@ -1,0 +1,48 @@
+1. Module_Student
+
+DROP TABLE Module_Student;
+
+2. Module_Student_Result
+
+DROP TABLE Module_Student_Result;
+
+3. Resource_Module_Student
+
+DROP TABLE Resource_Module_Student;
+
+4. Announcement_Module_Student
+
+DROP TABLE Announcement_Module_Student;
+
+5. Announcement
+
+DROP TABLE Announcement;
+
+6. Resources
+
+DROP TABLE Resources;
+
+7. Assessment
+
+DROP TABLE Assessment;
+
+8. Result
+
+DROP TABLE Result;
+
+9. Module
+
+DROP TABLE Module;
+
+10. Teacher
+
+DROP TABLE Teacher;
+
+11. Student
+
+DROP TABLE Student;
+
+12. Program
+
+DROP TABLE Program;
+

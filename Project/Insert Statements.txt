@@ -1,0 +1,165 @@
+1. Program Table
+
+INSERT ALL
+INTO Program (Program_ID, Program_Name, Credits, Program_Duration) VALUES ('P001', 'BSc Computing', 120, '4 Years')
+INTO Program (Program_ID, Program_Name, Credits, Program_Duration) VALUES ('P002', 'BSc Accounting', 130, '4 Years')
+INTO Program (Program_ID, Program_Name, Credits, Program_Duration) VALUES ('P003', 'BSc Computer Science', 120, '4 Years')
+INTO Program (Program_ID, Program_Name, Credits, Program_Duration) VALUES ('P004', 'BSc Software Engineering', 125, '4 Years')
+INTO Program (Program_ID, Program_Name, Credits, Program_Duration) VALUES ('P005', 'BBA Business Administration', 100, '3 Years')
+INTO Program (Program_ID, Program_Name, Credits, Program_Duration) VALUES ('P006', 'BSc Data Science', 110, '3 Years')
+INTO Program (Program_ID, Program_Name, Credits, Program_Duration) VALUES ('P007', 'BSc Cyber Security', 115, '4 Years')
+SELECT * FROM dual;
+
+2. Student Table
+
+INSERT ALL
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S001', 'P001', 'Newton Tiwari', 'Kirtipur', TO_DATE('2024-05-15', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S002', 'P003', 'Ram Pandey', 'Tahachal', TO_DATE('2023-05-10', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S003', 'P005', 'Alice Brown', 'Thimi', TO_DATE('2024-05-20', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S004', 'P007', 'Hang Rai', 'Lokanthali', TO_DATE('2023-05-05', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S005', 'P002', 'Khyam Timsina', 'Lubhu', TO_DATE('2024-05-12', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S006', 'P004', 'Prerna Saraf', 'Kuleshwor', TO_DATE('2023-05-25', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S007', 'P006', 'Tenzing Lama', 'Sanepa', TO_DATE('2024-05-19', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S008', 'P004', 'Rani kakshapati', 'Sanepa', TO_DATE('2023-05-01', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S009', 'P007', 'Prolan Shakya', 'Newroad', TO_DATE('2024-05-15', 'YYYY-MM-DD'))
+INTO Student (Student_ID, Program_ID, Student_Name, Student_Address, Enrollment_Date) VALUES ('S010', 'P002', 'Sudarshan Basnet', 'Sanepa', TO_DATE('2024-06-07', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+3. Teacher Table
+
+INSERT ALL
+INTO Teacher (Teacher_ID, Teacher_Name, Teacher_Address, Teacher_Email) VALUES ('T001', 'Rajan Manandhar', 'Dallu', 'rajan.manandhar@islington.edu.np')
+INTO Teacher (Teacher_ID, Teacher_Name, Teacher_Address, Teacher_Email) VALUES ('T002', 'Sabitri Pandey', 'Kirtipur', 'sabitri.pandey@islington.edu.np')
+INTO Teacher (Teacher_ID, Teacher_Name, Teacher_Address, Teacher_Email) VALUES ('T003', 'Roshan Dangi', 'Chabahil', 'roshan.dangi@islington.edu.np')
+INTO Teacher (Teacher_ID, Teacher_Name, Teacher_Address, Teacher_Email) VALUES ('T004', 'Suman Bajracharya', 'Lazimpat', 'suman.bajracharya@islington.edu.np')
+INTO Teacher (Teacher_ID, Teacher_Name, Teacher_Address, Teacher_Email) VALUES ('T005', 'Rameena Bhandari', 'Dallu', 'rameena.bhandari@islington.edu.np')
+INTO Teacher (Teacher_ID, Teacher_Name, Teacher_Address, Teacher_Email) VALUES ('T006', 'Sangeeta Chaudhary', 'Sanepa', 'sangeeta.chaudhary@islington.edu.np')
+INTO Teacher (Teacher_ID, Teacher_Name, Teacher_Address, Teacher_Email) VALUES ('T007', 'Ajay Karki', 'Sanepa', 'ajay.karki@islington.edu.np')
+SELECT * FROM dual;
+
+4. Module Table
+
+INSERT INTO Module (Mod_ID, Mod_Name, Mod_Duration, Teacher_ID) VALUES ('M001', 'Introduction to Programming', '1 Semester', 'T003');
+INSERT INTO Module (Mod_ID, Mod_Name, Mod_Duration, Teacher_ID) VALUES ('M002', 'Databases', '1 Semester', 'T007');
+INSERT INTO Module (Mod_ID, Mod_Name, Mod_Duration, Teacher_ID) VALUES ('M003', 'Software Engineering', '1 Semester', 'T002');
+INSERT INTO Module (Mod_ID, Mod_Name, Mod_Duration, Teacher_ID) VALUES ('M004', 'Web Development', '1 Semester', 'T005');
+INSERT INTO Module (Mod_ID, Mod_Name, Mod_Duration, Teacher_ID) VALUES ('M005', 'Cyber Security', '2 Semesters', 'T001');
+INSERT INTO Module (Mod_ID, Mod_Name, Mod_Duration, Teacher_ID) VALUES ('M006', 'Business Management', '1 Semester', 'T006');
+INSERT INTO Module (Mod_ID, Mod_Name, Mod_Duration, Teacher_ID) VALUES ('M007', 'Marketing Strategies', '1 Semester', 'T004');
+
+5. Result Table
+
+INSERT ALL
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R001', 85, 'A', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R002', 78, 'B', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R003', 82, 'A', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R004', 65, 'C', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R005', 88, 'A', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R006', 72, 'B', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R008', 55, 'D', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R009', 32, 'C', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+INTO Result (Result_ID, Total_Marks, Grade, Result_Date) VALUES ('R010', 91, 'A', TO_DATE('2024-11-15', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+6. Resources Table
+
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS001', 'Introduction to Data Structures', '6 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS002', 'Advanced Java Programming', '8 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS003', 'Business Communication Skills', '4 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS004', 'Databases Basics', '10 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS005', 'Financial Management Basics', '6 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS006', 'Cybersecurity Fundamentals', '5 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS007', 'Master Cybersecurity', '7 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS008', 'Web Development with HTML/CSS', '8 weeks'); 
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS009', 'Project Management Essentials', '6 weeks');
+INSERT INTO Resources (Resource_ID, Resource_Title, Resource_Duration) VALUES ('RS010', 'AI and Machine Learning Basics', '10 weeks');
+
+7. Assessment Table
+
+INSERT ALL
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A001', 'Mid-Term Exam', 30, TO_DATE('2023-05-15', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A002', 'Final Exam', 30, TO_DATE('2023-12-30', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A003', 'Final Project', 20, TO_DATE('2023-11-10', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A004', 'Viva', 20, TO_DATE('2024-02-25', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A005', 'Practical', 30, TO_DATE('2023-11-20', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A006', 'Presentation', 15, TO_DATE('2024-03-11', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A007', 'Final Project', 50, TO_DATE('2024-03-05', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A008', 'Class Participation', 15, TO_DATE('2024-02-10', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A009', 'Class Test', 15, TO_DATE('2024-02-16', 'YYYY-MM-DD'))
+INTO Assessment (Assessment_ID, Assessment_Title, Assessment_Weightage, Assessment_Deadline) VALUES ('A010', 'Notes', 25, TO_DATE('2024-02-26', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+8. Announcement Table
+
+INSERT ALL
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN001', 'New Semester', TO_DATE('2024-01-10', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN002', 'Project Submission Deadline', TO_DATE('2024-05-01', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN003', 'Guest Lecture', TO_DATE('2024-02-15', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN004', 'Course Details', TO_DATE('2024-01-25', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN005', 'Final Exam Schedule', TO_DATE('2024-05-01', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN006', 'Holiday Announcement', TO_DATE('2024-02-28', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN007', 'Notice Regarding Attendance', TO_DATE('2024-03-05', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN008', 'Lecture Concluded', TO_DATE('2024-03-10', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN009', 'Representative Meeting', TO_DATE('2024-02-20', 'YYYY-MM-DD'))
+INTO Announcement (Announcement_ID, Announcement_Title, Announcement_Date) VALUES ('AN010', 'Application Deadline', TO_DATE('2024-04-05', 'YYYY-MM-DD'))
+SELECT * FROM dual;
+
+9. Module_Student Table
+
+INSERT ALL
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M002', 'S007')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M002', 'S001')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M005', 'S009')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M006', 'S010')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M001', 'S004')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M007', 'S003')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M004', 'S006')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M003', 'S002')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M005', 'S008')
+INTO Module_Student (Mod_ID, Student_ID) VALUES ('M006', 'S005')
+SELECT * FROM dual;
+
+10. Module_Student_Result Table
+
+INSERT ALL
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A002', 'S007', 'M002', 'R005')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A004', 'S003', 'M007', 'R003')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A001', 'S006', 'M004', NULL)
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A007', 'S002', 'M003', 'R009')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A006', 'S008', 'M005', 'R002')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A003', 'S010', 'M006', 'R004')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A008', 'S009', 'M005', 'R008')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A005', 'S001', 'M002', 'R001')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A010', 'S004', 'M001', 'R010')
+INTO Module_Student_Result (Assessment_ID, Student_ID, Mod_ID, Result_ID) VALUES ('A009', 'S005', 'M006', 'R006')
+SELECT * FROM dual;
+
+11. Resource_Module_Student Table
+
+INSERT ALL
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS001', 'M007', 'S003', 'Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS002', 'M001', 'S004', 'Not Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS003', 'M006', 'S005', 'Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS004', 'M002', 'S007', 'Not Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS005', 'M006', 'S010', 'Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS006', 'M005', 'S009', 'Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS007', 'M005', 'S008', 'Not Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS008', 'M004', 'S006', 'Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS009', 'M003', 'S002', 'Not Completed')
+INTO Resource_Module_Student (Resource_ID, Mod_ID, Student_ID, Resource_Completion) VALUES ('RS010', 'M002', 'S001', 'Completed')
+SELECT * FROM dual;
+
+12. Announcement_Module_Student Table
+
+INSERT ALL
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN001', 'M003', 'S002')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN002', 'M005', 'S008')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN003', 'M007', 'S003')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN004', 'M002', 'S001')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN005', 'M005', 'S009')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN006', 'M001', 'S004')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN007', 'M006', 'S005')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN008', 'M002', 'S007')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN009', 'M004', 'S006')
+INTO Announcement_Module_Student (Announcement_ID, Mod_ID, Student_ID) VALUES ('AN010', 'M006', 'S010')
+SELECT * FROM dual;
